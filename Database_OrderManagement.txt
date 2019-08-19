@@ -1,7 +1,5 @@
 create table customer(cid int primary key,cname varchar(15),address varchar(50),state varchar(15),email varchar(20),pincode int,phone varchar(10));
 
-create table product(pid int primary key,pname varchar(15),price float,categoryId int,compId int,constraint cat_fk foreign key(categoryId) references category(catId),constraint comp_fk foreign key(compId) references company(compId));
-
 create table category(catId int primary key, category varchar(8));
 
 create table employee(eid int primary key,username varchar(15),password varchar(20));
@@ -9,6 +7,8 @@ create table employee(eid int primary key,username varchar(15),password varchar(
 create table company(compId int primary key, CompName varchar(15), address varchar(50), state varchar(15), gstNo int);
 
 create table orders(oid int primary key,date date, cid int, CshippingAddress varchar(50),CshippingState varchar(15), shippingCost float, status varchar(15), totalCost float, shippingAgency varchar(30), eid int,constraint cust_fk foreign key(cid) references customer(cid),constraint emp_fk foreign key(eid) references employee(eid));
+
+create table product(pid int primary key,pname varchar(15),price float,categoryId int,compId int,constraint cat_fk foreign key(categoryId) references category(catId),constraint comp_fk foreign key(compId) references company(compId));
 
 create table productList(oid int, pid int,quantity int, constraint order_fk foreign key(oid) references orders(oid),constraint prod_fk foreign key(pid) references product(pid));
 
