@@ -1,0 +1,5 @@
+alter table customer add gstNo int;
+
+create table loginDetails(eid int, lastLogIn timestamp, constraint login_fk foreign key(eid) references employee(eid));
+insert into loginDetails values(1,'2019-12-03 05:30:00');
+insert into loginDetails values(2,'2019-12-03 05:00:00');
