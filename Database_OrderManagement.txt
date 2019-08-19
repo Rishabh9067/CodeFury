@@ -1,0 +1,48 @@
+create table customer(cid int primary key,cname varchar(15),address varchar(50),state varchar(15),email varchar(20),pincode int,phone varchar(10));
+
+create table product(pid int primary key,pname varchar(15),price float,categoryId int,compId int,constraint cat_fk foreign key(categoryId) references category(catId),constraint comp_fk foreign key(compId) references company(compId));
+
+create table category(catId int primary key, category varchar(8));
+
+create table employee(eid int primary key,username varchar(15),password varchar(20));
+
+create table company(compId int primary key, CompName varchar(15), address varchar(50), state varchar(15), gstNo int);
+
+create table orders(oid int primary key,date date, cid int, CshippingAddress varchar(50),CshippingState varchar(15), shippingCost float, status varchar(15), totalCost float, shippingAgency varchar(30), eid int,constraint cust_fk foreign key(cid) references customer(cid),constraint emp_fk foreign key(eid) references employee(eid));
+
+create table productList(oid int, pid int,quantity int, constraint order_fk foreign key(oid) references orders(oid),constraint prod_fk foreign key(pid) references product(pid));
+
+create table invoice(invoiceId int primary key, date date, oid int, custId int, gstType varchar(15),constraint orderInvoice_fk foreign key(oid) references orders(oid),constraint custInvoice_fk foreign key(custId) references customer(cid));
+
+
+//INSERTIONS
+insert into customer values(1,'ram','gachbowli','telangana','ram@gmail.com',575002,'9875432654');
+insert into customer values(2,'esha','whitefield','bangalore','esha@gmail.com',575007,'9643256097');
+
+
+insert into category values(1,'Level 1');
+insert into category values(2,'Level 2');
+insert into category values(3,'Level 3');
+
+
+insert into product values(1,'Mobile Phone',24000,1,1);
+insert into product values(2,'Washing Machine',54000,3,2);
+
+
+insert into employee values(1,'ram123','ram@1');
+insert into employee values(2,'esha98','esha@12');
+
+
+insert into company values(1,'Apple','UK','London',123);
+insert into company values(2,'LG','India','Delhi',124);
+
+
+insert into orders values(1,'2019-11-19',2,'Hyderabad','Telangana',1000,'pending',50000,'E-Cart',1);
+insert into orders values(2,'2019-04-09',1,'Bangalore','Karnataka',100,'completed',3000,'K-Cart',2);
+
+
+insert into productList values(1,2,5);
+insert into productList values(2,1,1);
+
+insert into invoice values(1,'2019-04-29',1,1,'Inter-State');
+insert into invoice values(2,'2019-2-19',2,2,'Same-State');
