@@ -16,8 +16,8 @@ create table invoice(invoiceId int primary key, date date, oid int, custId int, 
 
 
 //INSERTIONS
-insert into customer values(1,'ram','gachbowli','telangana','ram@gmail.com',575002,'9875432654');
-insert into customer values(2,'esha','whitefield','bangalore','esha@gmail.com',575007,'9643256097');
+insert into customer values(1,'ram','gachbowli','telangana','ram@gmail.com',575002,'9875432654',345);
+insert into customer values(2,'esha','whitefield','bangalore','esha@gmail.com',575007,'9643256097',678);
 
 
 insert into category values(1,'Level 1');
