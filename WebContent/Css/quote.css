@@ -1,0 +1,54 @@
+#id_div {
+	margin: 0 auto;
+	margin-top: 50px;
+	text-align: center;
+}
+
+#cust_div {
+	margin: 0 auto;
+	width: 40%;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	box-shadow: 2px 2px 10px gray;
+}
+
+#cust_info_tbl {
+	margin: 0 auto;
+	width: 100%;
+	text-align: left;
+}
+
+#cust_info_tbl th {
+	padding-left: 10px;
+}
+
+#cust_info_tbl td {
+	padding-left: 50px;
+}
+
+#add_btn {
+	display: block;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 30%;
+	height: 40px;
+	background-color: #337ab7;
+	border: 0;
+	border-radius: 2px;
+	color: white;
+	font-size: 15px;
+}
+
+#add_btn:hover {
+	pointer: cursor;
+}
+
+#err {
+	color: red;
+	display: block;
+	margin: 0 auto;
+	border: 1px solid gray;
+}
