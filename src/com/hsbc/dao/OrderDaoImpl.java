@@ -57,12 +57,13 @@ public class OrderDaoImpl implements IOrderDao {
 		Map<Integer,Product> prod_map = new HashMap<Integer, Product>();
 		Product product = null;
 		try(Connection conn = DriverManager.getConnection(DatabaseConnection.getDbUrl())) {
+			int count=0;
 			PreparedStatement st = conn.prepareStatement(HQueries.viewpdtbytype);
 			st.setInt(1, categoryId);
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				product = new Product(rs.getInt("pid"),rs.getString("pname"),rs.getDouble("price"),rs.getInt("categoryId"),rs.getInt("compId"));
-				prod_map.put(rs.getInt("pid"), product);
+				prod_map.put(count++, product);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());

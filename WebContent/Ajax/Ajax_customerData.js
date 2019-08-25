@@ -10,7 +10,7 @@ function search(){
 
 function doAjax(id) {
 	var ajax = new XMLHttpRequest();
-	var url = "http://localhost:8080/Order_Processing_System/viewbyid.htm?cid=" + id;
+	var url = "http://localhost:8080/Order_Management_System/viewbyid.htm?cid=" + id;
 	ajax.open("GET", url, true);
 	ajax.send();
 	ajax.onreadystatechange = function(){

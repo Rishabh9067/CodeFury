@@ -5,10 +5,9 @@
 	<div id="nav">
 		<ul>
 			<li><a href="login.jsp">Log In</a></li>
-			<li><a href="#">Employee Log In</a></li>
-			<li><a href="#">Contact Us</a></li>
+			<li><a href="CreateQuote.jsp">Employee Log In</a></li>
+			<li><a href="AddProduct.jsp">Contact Us</a></li>
 		</ul>
-	</div>
-	
+	</div>	
 </body>
 </html>
